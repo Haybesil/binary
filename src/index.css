@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.norms {
+  background: rgb(20, 20, 22);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 20, 22, 1) 43%,
+    rgba(39, 35, 60, 1) 100%
+  );
+}
+
+.app {
+  background-image: url("./assets/gplaypattern.png"),
+    linear-gradient(90deg, rgba(20, 20, 22, 1) 43%, rgba(39, 35, 60, 1) 100%);
+  background-repeat: repeat;
+  background-size: 150px 150px; /* Adjust the size as needed */
+  background-blend-mode: darken; /* This blends the image and color */
+
+  /* Fix the animation to affect only the background image */
+  background-position: 0 0;
+  animation: moveBackground 35s linear infinite;
+  background-position: 0 0;
+  background-size: 150px 150px, cover; /* Size for both image and gradient */
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0, 0 0; /* Gradient stays fixed */
+  }
+  100% {
+    background-position: 100% 0, 0 0; /* Image moves, gradient remains fixed */
+  }
+}
