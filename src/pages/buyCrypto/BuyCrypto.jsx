@@ -10,6 +10,7 @@ import banx from '../../assets/banx.png';
 import mecury from '../../assets/mecury.png';
 import coingate from '../../assets/coingate.png';
 import Footer from '../../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
 
 const BuyCryptoSection = () => {
   const CryptoBuy = (props) => {
@@ -31,6 +32,7 @@ const BuyCryptoSection = () => {
   };
   return (
     <>
+     <Navbar />
       <div className="app h-fit py-60 px-36">
         <div className=" font-bold text-5xl text-white pb-10">Buy crypto</div>
         <div className="grid grid-cols-1 gap-10">

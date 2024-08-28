@@ -34,7 +34,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="app text-white lg:pt-20 lg:pb-60 border-b border-[#353945]">
+    <div className="app text-white lg:pt-20 lg:pb-60">
       <div className="text-center mb-16">
         <h2 className="text-5xl font-bold">How it works</h2>
       </div>
