@@ -35,7 +35,7 @@ const SignUp = () => {
       <LeftSide>
         <Link to='/' className='flex items-center text-[30px] pt-[40px] pl-[20px]'>
         <img src={Logo} alt="Wezudex Logo"/>
-        Wezudex
+        Binary
         </Link>
         <img src={Image} 
         alt="Binary Hero" 

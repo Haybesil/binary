@@ -5,6 +5,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignUp from './components/authentication/SignUp'
 import SignIn from './components/authentication/SignIn'
 import BuyCryptoSection from './pages/buyCrypto/BuyCrypto'
+import Trade from './pages/trade/Trade'
+import Terms from './pages/terms/Terms'
+import Policy from './pages/policy/Policy'
+import Markets from './pages/markets/Markets'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,23 @@ const router = createBrowserRouter([
     element: <BuyCryptoSection/>,
   },
 
+  {
+    path: '/trade',
+    element: <Trade/>,
+  },
+
+  {
+    path: '/termsOfUse',
+    element: <Terms/>,
+  },
+  {
+    path: '/policy',
+    element: <Policy/>,
+  },
+  {
+    path: '/markets',
+    element: <Markets/>,
+  },
 ])
 
 const App = () => {

@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../../assets/logo10.png";
 import bestchance from "../../assets/bestchange.png";
 
 const Footer = () => {
@@ -7,13 +8,9 @@ const Footer = () => {
       <div className="   md:px-12">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Logo and Company Name */}
-          <div className="flex mb-6 md:mb-0">
-            <img
-              src="/path-to-your-logo.svg"
-              alt="Wezudex Logo"
-              className="h-8 mr-2"
-            />
-            <span className="text-lg font-bold">Wezudex</span>
+          <div className="flex gap-3">
+            <img src={Logo} alt="Wezudex Logo" className="h-8" />
+            <span className="text-lg font-bold">Binary-Investment</span>
           </div>
 
           {/* Footer Links */}
