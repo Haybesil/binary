@@ -23,7 +23,7 @@ const BuyCryptoSection = () => {
           <div className="text-xl text-[#9FA8BF] w-[60%] text-center">
             {props.text}
           </div>
-          <button className=" text-white border-2 py-3 px-8 rounded-[30px] border-[#787E90] text-lg font-medium">
+          <button className=" text-white border-2 py-3 px-8 rounded-[30px] border-[#787E90] text-lg font-medium hover:bg-white hover:text-black hover:border-none">
             See more
           </button>
         </div>

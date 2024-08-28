@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/termsOfUse',
+    path: '/terms',
     element: <Terms/>,
   },
   {

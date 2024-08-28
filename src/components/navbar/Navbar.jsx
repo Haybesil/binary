@@ -5,7 +5,7 @@ import Logo from "../../assets/logo10.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="app fixed z-50 top-0 w-full flex lg:px-28 h-20 items-center border-b text-[#9FA8BF] justify-between">
+      <div className="app fixed z-50 top-0 w-full flex lg:px-28 h-20 items-center border-b border-[#9fa8bf6c] text-[#9FA8BF] justify-between">
         <Link to="/">
           <div className="flex items-center gap-3 border-r pr-5 border-[#b9bfcf78]">
             <img src={Logo} alt="Wezudex Logo" className="h-8" />
@@ -21,13 +21,13 @@ const Navbar = () => {
               Buy Crypto
             </Link>
             <li className=" hover:cursor-pointer">
-              <Link to="/termsOfUse">Terms of Use</Link>
+              <Link to="/terms">Terms of Use</Link>
             </li>
             <li className=" hover:cursor-pointer">
               <Link to="/policy">Privacy Policy</Link>
             </li>
             <li className=" hover:cursor-pointer">
-              <Link to=".markets">Markets</Link>
+              <Link to="/markets">Markets</Link>
             </li>
           </ul>
 
