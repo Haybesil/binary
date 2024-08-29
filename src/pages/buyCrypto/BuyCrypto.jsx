@@ -33,7 +33,7 @@ const BuyCryptoSection = () => {
   return (
     <>
      <Navbar />
-      <div className="app h-fit py-60 px-36">
+      <div className="app h-fit lg:py-60 px-36">
         <div className=" font-bold text-5xl text-white pb-10">Buy crypto</div>
         <div className="grid grid-cols-1 gap-10">
           <CryptoBuy
