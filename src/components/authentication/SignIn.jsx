@@ -58,7 +58,7 @@ const SignIn = () => {
           </h1>
         </Header>
         <Form>
-          <Label>EMAILssssssssss</Label>
+          <Label>EMAIL</Label>
           <Div className="mb-[25px]">
             <Input
               className="px-3 focus:outline-none"
