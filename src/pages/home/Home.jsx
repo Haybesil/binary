@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
-      <div className="bg-[#141416] px-36 py-8 h-fit">
+      <div className="bg-[#141416] px-6 lg:px-36 py-8 lg:h-fit">
         <TrademarketView />
       </div>
       <CryptoSection />

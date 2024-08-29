@@ -2,20 +2,19 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 
-
 const Terms = () => {
   const TermsComp = (props) => {
     return (
       <>
-        <div className=" flex flex-col gap-10">
+        <div className=" flex flex-col gap-5 lg:gap-10">
           <div>
-            <h1 className=" flex items-center text-white text-5xl font-bold tracking-wider">
+            <h1 className=" flex items-center text-white text-2xl lg:text-5xl font-bold tracking-wider">
               <span>{props.sn}</span>
               <span>{props.title}</span>
             </h1>
           </div>
           <div className=" w-[15vw] border border-[#353945]"></div>
-          <div className=" text-[#9FA8BF] flex flex-col gap-10 text-lg">
+          <div className=" text-[#9FA8BF] flex flex-col gap-5 lg:gap-10 lg:text-lg">
             <p>{props.para1}</p>
             <p>{props.para2}</p>
             <p>{props.para3}</p>
@@ -33,8 +32,8 @@ const Terms = () => {
       <div>
         <Navbar />
       </div>
-      <div className="bg-[#141416] h-fit lg:px-28 lg:py-52">
-        <div className=" font-bold text-white text-5xl text-center mb-24 tracking-wider">
+      <div className="bg-[#141416] h-fit pt-36 px-6 lg:px-28 lg:py-52">
+        <div className=" font-bold text-white text-3xl lg:text-5xl text-center mb-12 lg:mb-24 tracking-wider">
           Terms of Use
         </div>
 
