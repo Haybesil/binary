@@ -31,7 +31,7 @@ const SignIn = () => {
           className="flex items-center text-[30px] pt-[40px] pl-[20px]"
         >
           <img src={Logo} alt="Wezudex Logo" />
-          Wezudex
+          Binary
         </Link>
         <img src={Image} alt="Binary Hero" className="ml-[220px] h-[700px]" />
       </LeftSide>

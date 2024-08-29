@@ -78,7 +78,7 @@ const Hero = () => {
         {slides.map((slide) => (
           <div key={slide.id}>
             <div className="flex flex-row items-center h-screen">
-              <div className="w-[64%] lg:px-44 md:px-12 text-left">
+              <div className="w-[64%] lg:px-28 md:px-12 text-left">
                 <h1 className="text-3xl md:text-6xl text-white font-bold mb-6">
                   {slide.title}
                 </h1>

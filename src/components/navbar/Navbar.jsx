@@ -5,19 +5,30 @@ import Logo from "../../assets/logo10.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="app fixed z-50 top-0 w-full flex lg:px-44 h-20 items-center border-b gap-16 text-[#9FA8BF]">
-        <div className="logo pr-5 border-r border-r-[#9FA8BF]">
-          <img src={Logo} alt="" />
-        </div>
+      <div className="app fixed z-50 top-0 w-full flex lg:px-28 h-20 items-center border-b border-[#9fa8bf6c] text-[#9FA8BF] justify-between">
+        <Link to="/">
+          <div className="flex items-center gap-3 border-r pr-5 border-[#b9bfcf78]">
+            <img src={Logo} alt="Wezudex Logo" className="h-8" />
+            <span className="text-lg text-white font-bold">Binary</span>
+          </div>
+        </Link>
         <div className="navs flex items-center gap-12">
           <ul className=" flex items-center gap-12 font-semibold">
-            <li className=" hover:cursor-pointer">Trade</li>
+            <li className=" hover:cursor-pointer">
+              <Link to="/trade">Trade</Link>
+            </li>
             <Link to="/buycrypto" className=" hover:cursor-pointer">
               Buy Crypto
             </Link>
-            <li className=" hover:cursor-pointer">Terms of Use</li>
-            <li className=" hover:cursor-pointer">Privacy Policy</li>
-            <li className=" hover:cursor-pointer">Markets</li>
+            <li className=" hover:cursor-pointer">
+              <Link to="/terms">Terms of Use</Link>
+            </li>
+            <li className=" hover:cursor-pointer">
+              <Link to="/policy">Privacy Policy</Link>
+            </li>
+            <li className=" hover:cursor-pointer">
+              <Link to="/markets">Markets</Link>
+            </li>
           </ul>
 
           <div className="flex items-center gap-2">
