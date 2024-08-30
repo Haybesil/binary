@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
-import { AssetCoin } from '../AssestCoin';
+import AssetTable from '../AssestCoin';
 
 const Overview = () => {
   return (
@@ -55,34 +55,34 @@ const Overview = () => {
           </div>
         </div>
 
-        <div className=" mt-[20px] mx-[10px]">
+        {/* <div className=" mt-[20px] mx-[10px]">
           <h1 className="text-[16px] text-[#B1B5C4] font-[600] px-[30px]">
             Account Balances
           </h1>
           <div className="bg-[rgb(24,25,29)] rounded-[5px] py-[30px]">
-          <table className="text-white px-[30px] whitespace-nowrap">
-  <thead>
-    <tr className="border-b border-b-gray-600">
-      <th className="text-left pb-[20px]">Asset</th>
-      <th className="text-right pb-[20px]">Spot Balance</th>
-      <th className="text-right pb-[20px]">On orders</th>
-      <th className="text-right pb-[20px]">Available balance</th>
-      <th className="text-right pb-[20px]">Total Balance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td className="text-left pb-[20px]">BTC</td>
-      <td className="text-right pb-[20px]">0.0000btc</td>
-      <td className="text-right pb-[20px]">0.0000btc</td>
-      <td className="text-right pb-[20px]">0.0000btc</td>
-      <td className="text-right pb-[20px]">0.0000btc</td>
-    </tr>
-  </tbody>
-</table>
-
+            <table className="text-white px-[30px] whitespace-nowrap">
+              <thead>
+                <tr className="border-b border-b-gray-600">
+                  <th className="text-left pb-[20px]">Asset</th>
+                  <th className="text-right pb-[20px]">Spot Balance</th>
+                  <th className="text-right pb-[20px]">On orders</th>
+                  <th className="text-right pb-[20px]">Available balance</th>
+                  <th className="text-right pb-[20px]">Total Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="text-left pb-[20px]">BTC</td>
+                  <td className="text-right pb-[20px]">0.0000btc</td>
+                  <td className="text-right pb-[20px]">0.0000btc</td>
+                  <td className="text-right pb-[20px]">0.0000btc</td>
+                  <td className="text-right pb-[20px]">0.0000btc</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
+        </div> */}
+        <AssetTable/>
       </div>
     </>
   );

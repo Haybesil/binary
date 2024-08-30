@@ -8,7 +8,7 @@ function Dashboard() {
     <div>
       <Navbar />
 
-      <div className="bg-[#141416] flex w-[100%]">
+      <div className="bg-[#141416] h-[550vh] flex w-[100%]">
         <div className="w-[19%]">
           <Sidebar />
         </div>
