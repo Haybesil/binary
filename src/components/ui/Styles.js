@@ -7,7 +7,12 @@ export const Wrapper = styled.div`
   color: white; 
   height: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -17,6 +22,14 @@ export const Wrapper = styled.div`
 export const LeftSide = styled.div`
   width: 35%;
   background-color: #23262F;
+
+    @media (max-width: 1024px) {
+    display: none;
+  }
+
+    @media (max-width: 600px) {
+    display: none;
+  }
   `;
 
 export const RightSide = styled.div`
@@ -28,6 +41,22 @@ export const RightSide = styled.div`
   background-size: contain; 
   background-position: top right; 
   background-repeat: no-repeat;
+  justify-content: center;
+
+    @media (max-width: 1024px) {
+    width: 100%;
+    padding-left: 30px;
+    height: 100vh;
+    padding-top: 30px;
+
+  }
+
+    @media (max-width: 600px) {
+    width: 100%;
+    padding-left: 30px;
+    height: 100vh;
+    padding-top: 30px;
+}
   `;
 
 export const Header = styled.div`
@@ -36,6 +65,47 @@ export const Header = styled.div`
     padding-left: 90px;
     padding-top: 30px;
 
+    @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 0px;
+}
+
+    @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0px;
+}
+
+  `;
+
+export const SH1 = styled.h1`
+     
+        @media (max-width: 768px) {
+    order: 2;
+    padding-top: 0px;
+}
+
+  `;
+
+export const AH1 = styled.h1`
+
+   fontSize: '18px';
+   color: red;
+   
+        @media (max-width: 1024px) {
+    padding-top: 50px;
+    padding-right: 100px;
+    font-size: 15px;
+}
+
+        @media (max-width: 600px) {
+    padding-top: 50px;
+    padding-right: 100px;
+    font-size: 12px;
+    position: absolute;
+    color: red;
+    right: 30px,
+    left: 100px;
+}
   `;
 
 export const Form = styled.form`
@@ -49,7 +119,15 @@ export const Input = styled.input`
    width: 60%;
    display: block;
    border-radius: 10px;
-   padding-block: 10px
+   padding-block: 10px;
+
+     @media (max-width: 1024px) {
+    width: 90%;
+  }
+
+     @media (max-width: 600px) {
+    width: 90%;
+  }
   `;
 
 
@@ -60,7 +138,7 @@ export const Div = styled.div`
 
 export const Label = styled.label`
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
     color: gray;
   `;
 
@@ -89,6 +167,14 @@ export const SubmitButton = styled.button`
     margin-top: 10px;
     border-radius: 50px;
     margin-bottom: 40px;
+
+      @media (max-width: 1024px) {
+    width: 90%;
+  }
+
+      @media (max-width: 600px) {
+    width: 90%;
+  }
   `;
 
 export const ResetButton = styled.button`

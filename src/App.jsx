@@ -9,12 +9,15 @@ import Trade from './pages/trade/Trade'
 import Terms from './pages/terms/Terms'
 import Policy from './pages/policy/Policy'
 import Markets from './pages/markets/Markets'
+import NotFound from './pages/NotFound'
+import Dashboard from './pages/Dashboard'
 
 const router = createBrowserRouter([
   {
     path: '/',
     exact: true,
     element: <Home/>,
+    errorElement: <NotFound/>,
   },
 
   {
@@ -46,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: '/markets',
     element: <Markets/>,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard/>,
   },
 ])
 
