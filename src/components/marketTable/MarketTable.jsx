@@ -235,7 +235,9 @@ const MarketTable = () => {
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="text-gray-400">
+              <tr className="text-gray-400" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">#</th>
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">Name</th>
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">Last price</th>
@@ -247,7 +249,9 @@ const MarketTable = () => {
             </thead>
             <tbody>
               {data.map((item) => (
-                <tr key={item.id} className="border-b text-xs lg:text-xl border-gray-800">
+                <tr key={item.id} className="border-b text-xs lg:text-xl border-gray-800" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
                   <td className="py-4 px-2 lg:py-12 lg:px-4">{item.id}</td>
                   <td className="py-4 px-2 lg:py-12 lg:px-4 flex items-center">
                     <img

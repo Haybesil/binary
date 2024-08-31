@@ -38,46 +38,67 @@ const BuyCrypto = () => {
           Buy crypto
         </div>
         <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10">
-          <CryptoBuy
-            img={moonpay}
-            text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
-          />
-          <CryptoBuy
-            img={transak}
-            text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
-          />
-          <CryptoBuy
-            img={simplex}
-            text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
-          />
-          <CryptoBuy
-            img={mecury}
-            text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
-          />
-          <CryptoBuy
-            img={coingate}
-            text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
-          />
+          <div data-aos="flip-down">
+            <CryptoBuy
+              img={moonpay}
+              text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
+            />
+          </div>
+          <div data-aos="flip-up">
+            <CryptoBuy
+              img={transak}
+              text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
+            />
+          </div>
+          <div data-aos="flip-down">
+            <CryptoBuy
+              img={simplex}
+              text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
+            />
+          </div>
+
+          <div data-aos="flip-up">
+            <CryptoBuy
+              img={mecury}
+              text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
+            />
+          </div>
+          <div data-aos="flip-down">
+            <CryptoBuy
+              img={coingate}
+              text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
+            />
+          </div>
+          <div data-aos="flip-up">
           <CryptoBuy
             img={banx}
             text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
           />
+          </div>
+          <div data-aos="flip-down">
           <CryptoBuy
             img={bitpay}
             text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
           />
+          </div>
+          <div data-aos="flip-up">
           <CryptoBuy
             img={changely}
             text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
           />
+          </div>
+          <div data-aos="flip-down">
           <CryptoBuy
             img={phemex}
             text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
           />
+          </div>
+          <div data-aos="flip-up">
           <CryptoBuy
             img={ramp}
             text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."
           />
+          </div>
         </div>
       </div>
       <Footer />

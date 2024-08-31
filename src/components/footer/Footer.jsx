@@ -4,7 +4,10 @@ import bestchance from "../../assets/bestchange.png";
 
 const Footer = () => {
   return (
-    <footer className="app px-8 lg:px-32 border-t border-[#353945] h-fit py-14 text-white">
+    <footer
+      className="app px-8 lg:px-32 border-t border-[#353945] h-fit py-14 text-white"
+      data-aos="flip-left"
+    >
       <div className="md:px-12">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Logo and Company Name */}

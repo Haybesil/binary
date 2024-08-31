@@ -33,11 +33,14 @@ const Terms = () => {
         <Navbar />
       </div>
       <div className="bg-[#141416] h-fit pt-36 px-6 lg:px-28 lg:py-52">
-        <div className=" font-bold text-white text-3xl lg:text-5xl text-center mb-12 lg:mb-24 tracking-wider">
+        <div
+          className=" font-bold text-white text-3xl lg:text-5xl text-center mb-12 lg:mb-24 tracking-wider"
+          data-aos="fade-down"
+        >
           Terms of Use
         </div>
 
-        <div className=" flex flex-col gap-24">
+        <div className=" flex flex-col gap-24" data-aos="flip-right">
           <TermsComp
             sn="1."
             title="TERMS OF USE"

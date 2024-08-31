@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Div,
   Form,
@@ -11,13 +11,12 @@ import {
   SubmitButton,
   SH1,
   AH1,
-} from '../ui/Styles';
-import { RiEyeCloseLine } from 'react-icons/ri';
-import { FaRegEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Image from '../../assets/header-hero.png';
-import Logo from '../../assets/logo10.png';
-
+} from "../ui/Styles";
+import { RiEyeCloseLine } from "react-icons/ri";
+import { FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Image from "../../assets/header-hero.png";
+import Logo from "../../assets/logo10.png";
 
 const SignUp = () => {
   const Spinner = () => {
@@ -41,7 +40,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="justify-center">
+    <div className="justify-center" data-aos="flip-right">
       <div className="flex justify-center sm:justify-center lg:justify-start">
         <Link
           to="/"
@@ -59,10 +58,10 @@ const SignUp = () => {
           <Header>
             <SH1
               style={{
-                fontSize: '45px',
-                fontWeight: '700',
-                color: 'white',
-                paddingTop: '80px',
+                fontSize: "45px",
+                fontWeight: "700",
+                color: "white",
+                paddingTop: "80px",
               }}
               className="sm:text-center"
             >
@@ -70,8 +69,8 @@ const SignUp = () => {
             </SH1>
             <AH1
               style={{
-                fontWeight: '300',
-                color: 'white',
+                fontWeight: "300",
+                color: "white",
               }}
               className="sm:text-center whitespace-nowrap"
             >
@@ -93,7 +92,7 @@ const SignUp = () => {
             <Div className="relative mb-[25px]">
               <Input
                 className="px-3 focus:outline-none"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 required
               />
@@ -110,7 +109,7 @@ const SignUp = () => {
             <Div className="relative mb-[20px]">
               <Input
                 className="px-3 focus:outline-none"
-                type={showConfirmPassword ? 'text' : 'password'}
+                type={showConfirmPassword ? "text" : "password"}
                 placeholder="confirm Password"
                 required
               />
@@ -126,34 +125,30 @@ const SignUp = () => {
 
             <Div
               style={{
-                display: 'flex',
-                gap: '10px',
+                display: "flex",
+                gap: "10px",
               }}
             >
               <input
                 style={{
-                  marginBottom: '22px',
-                  transform: 'scale(1.5)',
+                  marginBottom: "22px",
+                  transform: "scale(1.5)",
                 }}
                 type="checkbox"
               />
 
               <p className="text-[18px] font-[600] text-gray-300 ">
                 By signing up I agree that I’m 18 years of age or <br /> older,
-                to the{' '}
+                to the{" "}
                 <span className="text-white">Terms of Use, Privacy Policy</span>
               </p>
             </Div>
 
             <Div>
-              <Link to='/dashboard'>
-              <SubmitButton disabled={loading}>
-                {loading ? ( 
-                  <Spinner size={20} color={'#fff'} /> 
-                ):( 
-                  'Continue'
-                )}
-              </SubmitButton>
+              <Link to="/dashboard">
+                <SubmitButton disabled={loading}>
+                  {loading ? <Spinner size={20} color={"#fff"} /> : "Continue"}
+                </SubmitButton>
               </Link>
             </Div>
           </Form>

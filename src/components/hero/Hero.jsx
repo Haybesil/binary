@@ -79,18 +79,18 @@ const Hero = () => {
           <div key={slide.id}>
             <div className="flex flex-col md:flex-row items-center h-screen">
               <div className="w-full md:w-[64%] lg:px-28 md:px-12 px-6 text-center md:text-left">
-                <h1 className="text-3xl md:text-6xl text-white font-bold mb-6">
+                <h1 className="text-3xl md:text-6xl text-white font-bold mb-6" data-aos="fade-up">
                   {slide.title}
                 </h1>
-                <p className="text-gray-400 mb-6">{slide.description}</p>
+                <p className="text-gray-400 mb-6" data-aos="fade-down">{slide.description}</p>
                 <Link
                   to="/signup"
-                  className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-500 transition"
+                  className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-500 transition" data-aos="fade-down"
                 >
                   {slide.buttonText}
                 </Link>
               </div>
-              <div className="lg:w-[30%] md:w-[30%] mt-10 md:mt-0">
+              <div className="lg:w-[30%] md:w-[30%] mt-10 md:mt-0" data-aos="fade-right">
                 <img
                   src={slide.image}
                   alt={slide.title}

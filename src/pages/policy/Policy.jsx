@@ -26,7 +26,7 @@ const Policy = () => {
         <Navbar />
       </div>
       <div className="bg-[#141416] h-fit pb-12 pt-36 px-6 lg:px-28 lg:py-52">
-        <div className=" flex flex-col gap-12 lg:gap-24">
+        <div className=" flex flex-col gap-12 lg:gap-24" data-aos="flip-left">
           <PolicyComp
             title="General"
             para="Wezudex Financial Company and its affiliates (hereinafter, 'Wezudex Financial Company', 'Wezudex', 'we', 'us' or 'our') are committed to protecting and respecting your privacy. This Privacy Policy (together with our Terms of Use) governs our collection, processing and use of your Personal Information. We define 'Personal Information' as information which identifies you personally, e.g. your name, address, e-mail address, trades etc."
