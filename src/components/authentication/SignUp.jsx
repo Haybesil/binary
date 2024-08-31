@@ -43,7 +43,7 @@ const SignUp = () => {
     <div className="justify-center h-screen" data-aos="flip-right">
       <div className="flex justify-center sm:justify-center lg:justify-start">
         <Link
-          to="/home"
+          to="/"
           className="absolute text-white flex items-center text-[30px] pt-[40px] pl-[20px]"
         >
           <img src={Logo} alt="Wezudex Logo" />

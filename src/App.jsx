@@ -1,64 +1,62 @@
-import {React, useEffect} from 'react'
-import Home from './pages/home/Home'
-import ScrollBtn from './components/scrollBtn/ScrollBtn'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SignUp from './components/authentication/SignUp'
-import SignIn from './components/authentication/SignIn'
-import BuyCryptoSection from './pages/buyCrypto/BuyCrypto'
-import Trade from './pages/trade/Trade'
-import Terms from './pages/terms/Terms'
-import Policy from './pages/policy/Policy'
-import Markets from './pages/markets/Markets'
-import NotFound from './pages/NotFound'
-import Dashboard from './pages/Dashboard'
+import { React, useEffect } from 'react';
+import Home from './pages/home/Home';
+import ScrollBtn from './components/scrollBtn/ScrollBtn';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SignUp from './components/authentication/SignUp';
+import SignIn from './components/authentication/SignIn';
+import BuyCryptoSection from './pages/buyCrypto/BuyCrypto';
+import Trade from './pages/trade/Trade';
+import Terms from './pages/terms/Terms';
+import Policy from './pages/policy/Policy';
+import Markets from './pages/markets/Markets';
+import NotFound from './pages/NotFound';
+import Dashboard from './pages/Dashboard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 const router = createBrowserRouter([
-  {
-    path: '/home',
-    element: <Home/>,
-  },
-
   {
     path: '/',
     exact: true,
-    element: <SignUp/>,
-    errorElement: <NotFound/>,
+    element: <Home />,
+    errorElement: <NotFound />,
+  },
 
+  {
+    path: '/signup',
+    element: <SignUp />,
   },
   {
     path: '/signin',
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: '/buycrypto',
-    element: <BuyCryptoSection/>,
+    element: <BuyCryptoSection />,
   },
 
   {
     path: '/trade',
-    element: <Trade/>,
+    element: <Trade />,
   },
 
   {
     path: '/terms',
-    element: <Terms/>,
+    element: <Terms />,
   },
   {
     path: '/policy',
-    element: <Policy/>,
+    element: <Policy />,
   },
   {
     path: '/markets',
-    element: <Markets/>,
+    element: <Markets />,
   },
   {
     path: '/dashboard',
-    element: <Dashboard/>,
+    element: <Dashboard />,
   },
-])
+]);
 
 const App = () => {
   useEffect(() => {
@@ -67,13 +65,13 @@ const App = () => {
     });
   }, []);
   return (
-    <div className=' overflow-hidden'>
-      <div className='btnbounce fixed bottom-6 right-12'>
-      <ScrollBtn />
+    <div className=" overflow-hidden">
+      <div className="btnbounce fixed bottom-6 right-12">
+        <ScrollBtn />
       </div>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
