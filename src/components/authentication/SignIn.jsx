@@ -38,7 +38,7 @@ const SignIn = () => {
     <div data-aos="flip-left">
       <div className="flex justify-center sm:justify-center lg:justify-start">
         <Link
-          to="/"
+          to="/home"
           className="absolute text-white flex items-center text-[30px] pt-[40px] pl-[20px]"
         >
           <img src={Logo} alt="Wezudex Logo" />
@@ -49,7 +49,7 @@ const SignIn = () => {
       <Wrapper>
         <LeftSide>
           <Link
-            to="/"
+            to="/home"
             className="flex items-center text-[30px] pt-[40px] pl-[20px]"
           >
             <img src={Logo} alt="Wezudex Logo" />
@@ -77,7 +77,7 @@ const SignIn = () => {
               }}
               className="sm:text-center whitespace-nowrap"
             >
-              Don't have an account? <Link to="/signup">Sign up for free</Link>{" "}
+              Don't have an account? <Link to="/">Sign up for free</Link>{' '}
             </AH1>
           </Header>
           <Form>

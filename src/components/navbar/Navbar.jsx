@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="app px-5 fixed z-50 top-0 w-full flex lg:px-28 h-20 items-center border-b border-[#9fa8bf6c] text-[#9FA8BF] justify-between">
-        <Link to="/">
+        <Link to="/home">
           <div className="flex items-center gap-3 border-r pr-5 border-[#b9bfcf78]">
             <img src={Logo} alt="Wezudex Logo" className="h-8" />
             <span className="text-lg text-white font-bold">Binary</span>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3 font-semibold">
           <Link
-            to="/signup"
+            to="/"
             className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
           >
             Sign up
@@ -152,7 +152,7 @@ const Navbar = () => {
               <Link to="/markets">Markets</Link>
             </li>
             <Link
-              to="/signup"
+              to="/"
               className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
             >
               Sign up

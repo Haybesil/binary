@@ -17,15 +17,16 @@ import 'aos/dist/aos.css';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    exact: true,
+    path: '/home',
     element: <Home/>,
-    errorElement: <NotFound/>,
   },
 
   {
-    path: '/signup',
+    path: '/',
+    exact: true,
     element: <SignUp/>,
+    errorElement: <NotFound/>,
+
   },
   {
     path: '/signin',
@@ -75,4 +76,4 @@ const App = () => {
   )
 }
 
-export default App 
+export default App

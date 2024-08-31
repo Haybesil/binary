@@ -31,7 +31,7 @@ export default function NotFound() {
           <p className="mt-4 text-gray-600">
             The page you're looking for doesn't exist or has been moved.
           </p>
-          <Link to="/" className="mt-6 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+          <Link to="/home" className="mt-6 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
             Go to Homepage
           </Link>
         </motion.div>
