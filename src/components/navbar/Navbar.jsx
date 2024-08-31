@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="app px-5 fixed z-50 top-0 w-full flex lg:px-28 h-20 items-center border-b border-[#9fa8bf6c] text-[#9FA8BF] justify-between">
-        <Link to="/home">
+        <Link to="/">
           <div className="flex items-center gap-3 border-r pr-5 border-[#b9bfcf78]">
             <img src={Logo} alt="Wezudex Logo" className="h-8" />
             <span className="text-lg text-white font-bold">Binary</span>
