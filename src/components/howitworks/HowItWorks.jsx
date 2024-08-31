@@ -38,7 +38,7 @@ const HowItWorks = () => {
       <div className="text-center mb-16">
         <h2 className="text-3xl lg:text-5xl font-bold">How it works</h2>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-8 space-y-8 lg:space-y-0">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-8 space-y-8 lg:space-y-0" data-aos="flip-left">
         {steps.map((step) => (
           <div key={step.id} className="text-center w-full lg:w-auto">
             <div className="mb-8 lg:mb-16">

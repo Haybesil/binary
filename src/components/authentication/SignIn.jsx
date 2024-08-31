@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Div,
   Form,
@@ -11,15 +11,14 @@ import {
   SubmitButton,
   SH1,
   AH1,
-} from '../ui/Styles';
-import { RiEyeCloseLine } from 'react-icons/ri';
-import { FaRegEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Image from '../../assets/header-hero.png';
-import Logo from '../../assets/logo10.png';
+} from "../ui/Styles";
+import { RiEyeCloseLine } from "react-icons/ri";
+import { FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Image from "../../assets/header-hero.png";
+import Logo from "../../assets/logo10.png";
 
 const SignIn = () => {
-
   const Spinner = () => {
     return (
       <div>
@@ -28,17 +27,15 @@ const SignIn = () => {
     );
   };
 
-  
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
   return (
-    <div>
+    <div data-aos="flip-left">
       <div className="flex justify-center sm:justify-center lg:justify-start">
         <Link
           to="/"
@@ -64,23 +61,23 @@ const SignIn = () => {
           <Header>
             <SH1
               style={{
-                fontSize: '45px',
-                fontWeight: '700',
-                color: 'white',
-                paddingTop: '80px',
+                fontSize: "45px",
+                fontWeight: "700",
+                color: "white",
+                paddingTop: "80px",
               }}
-              className='sm:text-center'
+              className="sm:text-center"
             >
               Sign in
             </SH1>
             <AH1
-              style={{ 
-                fontWeight: '300',
-                color: 'white',
+              style={{
+                fontWeight: "300",
+                color: "white",
               }}
-              className='sm:text-center whitespace-nowrap'
+              className="sm:text-center whitespace-nowrap"
             >
-              Don't have an account? <Link to="/signup">Sign up for free</Link>{' '}
+              Don't have an account? <Link to="/signup">Sign up for free</Link>{" "}
             </AH1>
           </Header>
           <Form>
@@ -98,7 +95,7 @@ const SignIn = () => {
             <Div className="relative mb-[25px]">
               <Input
                 className="px-3 focus:outline-none"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 required
               />
@@ -113,14 +110,10 @@ const SignIn = () => {
             </Div>
 
             <Div>
-              <Link to='/dashboard'>
-            <SubmitButton disabled={loading}>
-                {loading ? ( 
-                  <Spinner size={20} color={'#fff'} /> 
-                ):( 
-                  'Login'
-                )}
-              </SubmitButton>
+              <Link to="/dashboard">
+                <SubmitButton disabled={loading}>
+                  {loading ? <Spinner size={20} color={"#fff"} /> : "Login"}
+                </SubmitButton>
               </Link>
             </Div>
           </Form>

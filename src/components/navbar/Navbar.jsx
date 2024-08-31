@@ -99,14 +99,15 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="app lg:hidden absolute top-20 left-0 w-full bg-[#1F2026] z-40">
-          <ul className="flex flex-col items-center gap-6 text-white py-6">
+        <div className="app lg:hidden absolute top-20 left-0 w-full h-screen bg-[#1F2026] z-40" data-aos="flip-left">
+          <ul className="flex flex-col items-center gap-8 text-white py-6">
             <li
               className={`hover:cursor-pointer ${
                 location.pathname === "/trade"
                   ? "border-b-2 border-[#7669FE]"
                   : ""
               } transition duration-300`}
+              data-aos="fade-up"
             >
               <Link to="/trade">Trade</Link>
             </li>
@@ -116,6 +117,7 @@ const Navbar = () => {
                   ? "border-b-2 border-[#7669FE]"
                   : ""
               } transition duration-300`}
+              data-aos="fade-down"
             >
               <Link to="/buycrypto">Buy Crypto</Link>
             </li>
@@ -125,6 +127,7 @@ const Navbar = () => {
                   ? "border-b-2 border-[#7669FE]"
                   : ""
               } transition duration-300`}
+              data-aos="fade-up"
             >
               <Link to="/terms">Terms of Use</Link>
             </li>
@@ -134,6 +137,7 @@ const Navbar = () => {
                   ? "border-b-2 border-[#7669FE]"
                   : ""
               } transition duration-300`}
+              data-aos="fade-down"
             >
               <Link to="/policy">Privacy Policy</Link>
             </li>
@@ -143,6 +147,7 @@ const Navbar = () => {
                   ? "border-b-2 border-[#7669FE]"
                   : ""
               } transition duration-300`}
+              data-aos="fade-up"
             >
               <Link to="/markets">Markets</Link>
             </li>
