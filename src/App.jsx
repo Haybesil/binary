@@ -13,6 +13,9 @@ import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { AuthProvider } from './components/contexts/authContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -64,13 +67,19 @@ const App = () => {
       duration: 1200, // Animation duration in milliseconds
     });
   }, []);
+
   return (
-    <div className=" overflow-hidden">
-      <div className="btnbounce fixed bottom-6 right-12">
-        <ScrollBtn />
-      </div>
-      <RouterProvider router={router} />
-    </div>
+    <>
+      <ToastContainer />
+      <AuthProvider>
+        <div className=" overflow-hidden">
+          <div className="btnbounce fixed bottom-6 right-12">
+            <ScrollBtn />
+          </div>
+          <RouterProvider router={router} />
+        </div>
+      </AuthProvider>
+    </>
   );
 };
 

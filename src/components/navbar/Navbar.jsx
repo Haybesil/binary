@@ -1,11 +1,18 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa"; // Import the hamburger icon
-import Logo from "../../assets/logo10.png";
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
+import Logo from '../../assets/logo10.png';
+import { useAuth } from '../contexts/authContext';
+import { toSignOut } from '../firebase/Auth';
+import { FaRegUser } from "react-icons/fa6";
+
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location
   const [isOpen, setIsOpen] = useState(false); // State to toggle the menu
+
+  const navigate = useNavigate();
+  const { userLoggedIn } = useAuth();
 
   return (
     <div>
@@ -21,45 +28,45 @@ const Navbar = () => {
           <ul className="flex items-center gap-12 font-semibold">
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/trade"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/trade'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
             >
               <Link to="/trade">Trade</Link>
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/buycrypto"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/buycrypto'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
             >
               <Link to="/buycrypto">Buy Crypto</Link>
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/terms"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/terms'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
             >
               <Link to="/terms">Terms of Use</Link>
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/policy"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/policy'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
             >
               <Link to="/policy">Privacy Policy</Link>
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/markets"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/markets'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
             >
               <Link to="/markets">Markets</Link>
@@ -75,18 +82,43 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3 font-semibold">
-          <Link
-            to="/signup"
-            className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
-          >
-            Sign up
-          </Link>
-          <Link
-            to="/signin"
-            className="hover:cursor-pointer border-2 border-[#787E90] rounded-2xl text-white hover:bg-white hover:text-black hover:border-none px-5 py-2"
-          >
-            Login
-          </Link>
+          {userLoggedIn ? (
+            <>
+              <button
+                onClick={() => {
+                  toSignOut().then(() => {
+                    navigate('/signin');
+                  });
+                }}
+                className='bg-red-700 text-white px-[20px] py-[5px] rounded'
+              >
+                Sign Out
+              </button>
+              <button
+                className='bg-blue-700 text-white px-[20px] py-[5px] rounded'
+              >
+                Wallet
+              </button>
+              <button>
+                <FaRegUser size={25}/>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/signup"
+                className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
+              >
+                Sign up
+              </Link>
+              <Link
+                to="/signin"
+                className="hover:cursor-pointer border-2 border-[#787E90] rounded-2xl text-white hover:bg-white hover:text-black hover:border-none px-5 py-2"
+              >
+                Login
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Hamburger Menu */}
@@ -99,13 +131,16 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="app lg:hidden absolute top-20 left-0 w-full h-screen bg-[#1F2026] z-40" data-aos="flip-left">
+        <div
+          className="app lg:hidden absolute top-20 left-0 w-full h-screen bg-[#1F2026] z-40"
+          data-aos="flip-left"
+        >
           <ul className="flex flex-col items-center gap-8 text-white py-6">
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/trade"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/trade'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
               data-aos="fade-up"
             >
@@ -113,9 +148,9 @@ const Navbar = () => {
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/buycrypto"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/buycrypto'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
               data-aos="fade-down"
             >
@@ -123,9 +158,9 @@ const Navbar = () => {
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/terms"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/terms'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
               data-aos="fade-up"
             >
@@ -133,9 +168,9 @@ const Navbar = () => {
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/policy"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/policy'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
               data-aos="fade-down"
             >
@@ -143,9 +178,9 @@ const Navbar = () => {
             </li>
             <li
               className={`hover:cursor-pointer ${
-                location.pathname === "/markets"
-                  ? "border-b-2 border-[#7669FE]"
-                  : ""
+                location.pathname === '/markets'
+                  ? 'border-b-2 border-[#7669FE]'
+                  : ''
               } transition duration-300`}
               data-aos="fade-up"
             >
