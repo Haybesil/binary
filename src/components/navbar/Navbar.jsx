@@ -76,7 +76,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3 font-semibold">
           <Link
-            to="/"
+            to="/signup"
             className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
           >
             Sign up
