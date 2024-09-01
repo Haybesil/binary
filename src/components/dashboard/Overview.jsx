@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import AssetTable from '../AssestCoin';
 import { DepositModal, WithDrawModal } from '../Modal';
+import { IoMdSearch } from "react-icons/io";
+
 
 const Overview = () => {
   const [deposit, setDeposit] = useState(false);
@@ -19,7 +21,7 @@ const Overview = () => {
     <>
       <div className="h-screen mt-[90px]">
         <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row justify-between mx-[10px] bg-[#18191D] rounded-[5px] px-[30px] py-[30px]">
-          <div className='order-2'>
+          <div className='order-2 sm:order-2 md:order-1 lg:order-1'>
             <h1 className="text-white text-[40px] order-1">Overview</h1>
             <p className="text-[16px] text-[#B1B5C4] font-[600]">
               Total Balance
@@ -33,12 +35,13 @@ const Overview = () => {
             <p className="text-[18px] text-[#B1B5C4] font-[400]">$21,552.06</p>
           </div>
 
-          <div className='order-1'>
+          <div className='order-1 sm:order-1 md:order-2 lg:order-2 flex items-center'>
             <input
               type="text"
               placeholder="Search coin"
               className="border-gray-600 border-[2px] py-[6px] w-[17rem] rounded-[50px] bg-inherit pl-[10px] text-[15px]"
             />
+            <IoMdSearch className='text-gray-500 absolute right-[22rem] lg:right-12' size={22}/>
           </div>
         </div>
 
