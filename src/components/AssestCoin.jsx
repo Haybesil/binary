@@ -241,8 +241,6 @@ const AssetTable = () => {
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">On orders</th>
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">Available balance</th>
                 <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">Total balance</th>
-                {/* <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">High 24H</th>
-                <th className="py-2 px-2 lg:py-2 lg:px-4 text-left text-xs lg:text-base">Volume 24H</th> */}
               </tr>
             </thead>
             <tbody>

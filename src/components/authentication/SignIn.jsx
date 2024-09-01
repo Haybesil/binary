@@ -72,7 +72,7 @@ const SignIn = () => {
 
   return (
     <>
-      {userLoggedIn && <Navigate to={'/dashboard'} replace={true} />}
+      {userLoggedIn && <Navigate to={'/'} replace={true} />}
       <div data-aos="flip-left">
         <div className="flex justify-center sm:justify-center lg:justify-start">
           <Link

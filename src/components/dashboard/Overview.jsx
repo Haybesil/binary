@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoArrowForwardCircleSharp } from 'react-icons/io5';
 import AssetTable from '../AssestCoin';
+import { DepositModal, WithDrawModal } from '../Modal';
 
 const Overview = () => {
+  const [deposit, setDeposit] = useState(false);
+  const [withdraw, setWithdraw] = useState(false);
+
+  const handleClose = () => {
+    setDeposit(false);
+  }
+
+  const handleWithdrawClose = () => {
+    setWithdraw(false);
+  }
+
   return (
     <>
       <div className="h-screen mt-[90px]">
-        <div className="flex justify-between mx-[10px] bg-[#18191D] rounded-[5px] px-[30px] py-[30px]">
-          <div>
-            <h1 className="text-white text-[40px]">Overview</h1>
+        <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row justify-between mx-[10px] bg-[#18191D] rounded-[5px] px-[30px] py-[30px]">
+          <div className='order-2'>
+            <h1 className="text-white text-[40px] order-1">Overview</h1>
             <p className="text-[16px] text-[#B1B5C4] font-[600]">
               Total Balance
             </p>
@@ -21,7 +33,7 @@ const Overview = () => {
             <p className="text-[18px] text-[#B1B5C4] font-[400]">$21,552.06</p>
           </div>
 
-          <div>
+          <div className='order-1'>
             <input
               type="text"
               placeholder="Search coin"
@@ -36,18 +48,26 @@ const Overview = () => {
           </h1>
           <div className="bg-[rgb(24,25,29)] rounded-[5px] px-[30px] py-[30px]">
             <div className="flex justify-between border-b border-b-gray-600 pb-[30px]">
-              <h1 className="text-white text-[18px]">Spot</h1>
+              <p className="text-[#B1B5C4] flex gap-[25px] items-center font-[600]">
+                {' '}
+                <div className="h-[12px] w-[12px] bg-[#FFD166] rounded"></div>{' '}
+                Spot
+              </p>
               <p className=" flex gap-[7px] items-center text-[18px] text-white font-[700]">
                 0 BTC
               </p>
             </div>
             <div className="flex gap-[10px] pt-[34px]">
-              <button className="text-white border-gray-600 border-[2px] py-[6px] px-[20px] flex items-center gap-[10px] rounded-[50px]">
+              <button className="text-white border-gray-600 border-[2px] py-[6px] px-[20px] flex items-center gap-[10px] rounded-[50px]"
+              onClick={() => {setDeposit(!deposit)}}
+              >
                 Deposit
                 <IoArrowForwardCircleSharp className="text-gray-600" />
               </button>
 
-              <button className="text-white border-gray-600 border-[2px] py-[6px] px-[20px] flex items-center gap-[10px] rounded-[50px]">
+              <button className="text-white border-gray-600 border-[2px] py-[6px] px-[20px] flex items-center gap-[10px] rounded-[50px]"
+              onClick={() => {setWithdraw(!withdraw)}}
+              >
                 Withdraw
                 <IoArrowForwardCircleSharp className="text-gray-600" />
               </button>
@@ -82,7 +102,22 @@ const Overview = () => {
             </table>
           </div>
         </div> */}
-        <AssetTable/>
+        <AssetTable />
+      </div>
+
+      <div>
+        {deposit && (
+          <div>
+            <DepositModal handleClose={handleClose}/>
+          </div>
+        )}
+      </div>
+      <div>
+        {withdraw && (
+          <div>
+            <WithDrawModal handleClose={handleWithdrawClose}/>
+          </div>
+        )}
       </div>
     </>
   );

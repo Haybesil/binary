@@ -9,10 +9,10 @@ function Dashboard() {
       <Navbar />
 
       <div className="bg-[#141416] h-[550vh] flex w-[100%]">
-        <div className="w-[19%]">
+        <div className="w-[19%]  hidden sm:hidden md:block lg:block">
           <Sidebar />
         </div>
-        <div className="w-[81%]">
+        <div className="w-[100%] sm:w-[100%] md:w-[81%] lg:w-[81%]">
           <Overview />
         </div>
       </div>

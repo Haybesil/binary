@@ -94,16 +94,9 @@ const Hero = () => {
                 </p>
                 {userLoggedIn ? (
                   <>
-                    <button
-                      onClick={() => {
-                        toSignOut().then(() => {
-                          navigate('/signin');
-                        });
-                      }}
-                      className='bg-red-700 text-white px-[20px] py-[5px] rounded'
-                    >
-                      Sign Out
-                    </button>
+                     <Link to='/dashboard' className="bg-blue-700 text-white px-[20px] py-[10px] rounded-[50px]">
+                    Go to wallet
+                  </Link>
                   </>
                 ) : (
                   <>

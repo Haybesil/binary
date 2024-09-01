@@ -186,3 +186,72 @@ export const ResetButton = styled.button`
     margin-top: 10px;
   `;
 
+
+
+
+
+export const InputWrapper = styled.div`
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 20px;
+  padding-inline: 20px;
+  width: 30vw;
+  height: 550px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #23262F;
+  z-index: 1000;
+  transform-origin: center;
+  
+  & > label {
+    font-family: 'Gilroy-Bold';
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export const EditCourse = styled.select`
+  padding: 10px;
+  margin-top: 10px;
+  width: ${(props) => {
+    return props.isSidebarVisible ? 'calc(60rem - 320px)' : '20rem';
+  }};
+  max-width: 500px;
+  border: 2px solid gray;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #23262F;
+  color: white;
+  transition: border-color 0.3s ease, width 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+   & > option {
+   display: flex;
+   padding-top: 10px
+    font-family: 'Gilroy-Bold';
+    font-size: 20px;
+    line-height: 19px;
+  overflow: scroll;
+
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; // Full width on mobile
+  }
+`;

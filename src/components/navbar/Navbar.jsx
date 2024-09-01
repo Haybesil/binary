@@ -4,8 +4,7 @@ import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
 import Logo from '../../assets/logo10.png';
 import { useAuth } from '../contexts/authContext';
 import { toSignOut } from '../firebase/Auth';
-import { FaRegUser } from "react-icons/fa6";
-
+import { FaRegUser } from 'react-icons/fa6';
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location
@@ -84,23 +83,22 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3 font-semibold">
           {userLoggedIn ? (
             <>
+               <button>
+                <FaRegUser size={25} />
+              </button>
+              <Link to='/dashboard' className="bg-blue-700 text-white px-[10px] py-[5px] rounded text-[14px]">
+                Wallet
+              </Link>
+             
               <button
                 onClick={() => {
                   toSignOut().then(() => {
                     navigate('/signin');
                   });
                 }}
-                className='bg-red-700 text-white px-[20px] py-[5px] rounded'
+                className="bg-red-700 text-white px-[10px] py-[5px] rounded text-[14px]"
               >
                 Sign Out
-              </button>
-              <button
-                className='bg-blue-700 text-white px-[20px] py-[5px] rounded'
-              >
-                Wallet
-              </button>
-              <button>
-                <FaRegUser size={25}/>
               </button>
             </>
           ) : (
@@ -186,18 +184,44 @@ const Navbar = () => {
             >
               <Link to="/markets">Markets</Link>
             </li>
-            <Link
-              to="/"
-              className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
-            >
-              Sign up
-            </Link>
-            <Link
-              to="/signin"
-              className="hover:cursor-pointer border-2 border-[#787E90] rounded-2xl text-white hover:bg-white hover:text-black hover:border-none px-5 py-2"
-            >
-              Login
-            </Link>
+            <div className="flex flex-col gap-[20px] items-center">
+              {userLoggedIn ? (
+                <>
+                  <button>
+                    <FaRegUser size={25} />
+                  </button>
+                  <Link to='/dashboard' className="bg-blue-700 text-white px-[20px] py-[5px] rounded">
+                    Wallet
+                  </Link>
+
+                  <button
+                    onClick={() => {
+                      toSignOut().then(() => {
+                        navigate('/signin');
+                      });
+                    }}
+                    className="bg-red-700 text-white px-[20px] py-[5px] rounded"
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/signup"
+                    className="hover:cursor-pointer bg-[#1FAEEE] rounded-2xl text-white hover:bg-blue-800 px-5 py-2 hover:border-2 hover:border-[#41444bbb] whitespace-nowrap"
+                  >
+                    Sign up
+                  </Link>
+                  <Link
+                    to="/signin"
+                    className="hover:cursor-pointer border-2 border-[#787E90] rounded-2xl text-white hover:bg-white hover:text-black hover:border-none px-5 py-2"
+                  >
+                    Login
+                  </Link>
+                </>
+              )}
+            </div>
           </ul>
         </div>
       )}
