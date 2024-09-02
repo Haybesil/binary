@@ -16,6 +16,7 @@ import 'aos/dist/aos.css';
 import { AuthProvider } from './components/contexts/authContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PromoCode from './components/PromoCode';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <Dashboard />,
+  },
+  {
+    path: '/promocode',
+    element: <PromoCode/>,
   },
 ]);
 

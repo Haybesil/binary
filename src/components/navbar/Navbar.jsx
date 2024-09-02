@@ -5,10 +5,16 @@ import Logo from '../../assets/logo10.png';
 import { useAuth } from '../contexts/authContext';
 import { toSignOut } from '../firebase/Auth';
 import { FaRegUser } from 'react-icons/fa6';
+import UserDropdown from '../Userdropdown';
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location
   const [isOpen, setIsOpen] = useState(false); // State to toggle the menu
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
 
   const navigate = useNavigate();
   const { userLoggedIn } = useAuth();
@@ -83,23 +89,18 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3 font-semibold">
           {userLoggedIn ? (
             <>
-               <button>
-                <FaRegUser size={25} />
-              </button>
-              <Link to='/dashboard' className="bg-blue-700 text-white px-[10px] py-[5px] rounded text-[14px]">
+              <Link
+                to="/dashboard"
+                className="bg-[#1DAEEF] text-white px-[20px] py-[10px] rounded-[50px] text-[14px]"
+              >
                 Wallet
               </Link>
-             
-              <button
-                onClick={() => {
-                  toSignOut().then(() => {
-                    navigate('/signin');
-                  });
-                }}
-                className="bg-red-700 text-white px-[10px] py-[5px] rounded text-[14px]"
-              >
-                Sign Out
-              </button>
+              <div style={{ position: 'relative' }}>
+                <button onClick={toggleDropdown}>
+                  <FaRegUser size={25} />
+                </button>
+                {isProfileOpen && <UserDropdown />}
+              </div>
             </>
           ) : (
             <>
@@ -187,10 +188,17 @@ const Navbar = () => {
             <div className="flex flex-col gap-[20px] items-center">
               {userLoggedIn ? (
                 <>
-                  <button>
-                    <FaRegUser size={25} />
-                  </button>
-                  <Link to='/dashboard' className="bg-blue-700 text-white px-[20px] py-[5px] rounded">
+                  <div style={{ position: 'relative' }}>
+                    <button onClick={toggleDropdown}>
+                      <FaRegUser size={25} />
+                    </button>
+                    {isProfileOpen && <UserDropdown />}
+                  </div>
+
+                  <Link
+                    to="/dashboard"
+                    className="bg-blue-700 text-white px-[20px] py-[5px] rounded"
+                  >
                     Wallet
                   </Link>
 

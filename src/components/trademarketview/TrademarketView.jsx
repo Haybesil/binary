@@ -39,19 +39,40 @@ const TrademarketView = () => {
       icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
     },
     {
-      id: 5,
-      name: "Litecoin LTC",
+      id: 6,
+      name: "AlgoRand",
       price: "$63.52",
       change: "-4.59%",
-      icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+      icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/4030.png",
     },
     {
-      id: 5,
-      name: "Litecoin LTC",
+      id: 7,
+      name: "Stellar XLM",
       price: "$63.52",
       change: "-7.59%",
-      icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+      icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
     },
+
+    // {
+    //   id: 16,
+    //   name: "AlgoRand",
+    //   price: "$0.10",
+    //   change: "+0.87%",
+    //   low24h: "$0.10",
+    //   high24h: "$0.10",
+    //   volume: "76351675.11",
+    //   icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/4030.png",
+    // },
+    // {
+    //   id: 17,
+    //   name: "Stellar XLM",
+    //   price: "$0.10",
+    //   change: "+0.87%",
+    //   low24h: "$0.10",
+    //   high24h: "$0.10",
+    //   volume: "76351675.11",
+    //   icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+    // },
   ];
 
   return (
