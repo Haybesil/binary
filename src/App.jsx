@@ -12,7 +12,7 @@ import Markets from './pages/markets/Markets';
 import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 import { AuthProvider } from './components/contexts/authContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
