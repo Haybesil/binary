@@ -5,7 +5,7 @@ import Logo from '../../assets/logo10.png';
 import { useAuth } from '../contexts/authContext';
 import { toSignOut } from '../firebase/Auth';
 import { FaRegUser } from 'react-icons/fa6';
-import UserDropdown from '../Userdropdown';
+import UserDropdown from '../UserDropdown';
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location

@@ -62,7 +62,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/promocode',
-    element: <PromoCode/>,
+    element: <PromoCode />,
   },
 ]);
 
@@ -71,6 +71,7 @@ const App = () => {
     AOS.init({
       duration: 1200, // Animation duration in milliseconds
     });
+    AOS.refresh();
   }, []);
 
   return (
