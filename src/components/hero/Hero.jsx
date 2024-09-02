@@ -16,7 +16,7 @@ const slides = [
   {
     id: 1,
     title: 'Be calm about your cryptocurrency assets',
-    description: 'The besr way to receive and send cryptocurrency.',
+    description: 'The best way to receive and send cryptocurrency.',
     image: Slide1,
     buttonText: 'Sign Up',
   },
