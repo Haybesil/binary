@@ -78,7 +78,7 @@ const PromoCode = () => {
               </p>
               <div className="bg-[#23262F] p-6 flex flex-col gap-8 rounded-2xl">
                 <label
-                  className="text-white text-3xl font-semibold mb-2 block"
+                  className="text-white text-xl lg:text-3xl font-semibold mb-2 block whitespace-nowrap"
                   htmlFor="promo"
                 >
                   Type promo code below
