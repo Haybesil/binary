@@ -10,7 +10,7 @@ import { doc, getDoc, updateDoc, increment } from 'firebase/firestore';
 const Overview = () => {
   const [deposit, setDeposit] = useState(false);
   const [withdraw, setWithdraw] = useState(false);
-  const [wallet, setWallet] = useState({ balance: 0.00, currency: 'BTC' });
+  const [wallet, setWallet] = useState({ balance: 0.000, currency: 'BTC' });
   const [loading, setLoading] = useState(true);
 
   // Get promoValue from Redux state
