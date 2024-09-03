@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
-import { EditCourse, InputWrapper } from './ui/Styles';
+import { EditCourse, Input, InputWrapper, SubmitButton } from './ui/Styles';
 import DepositImg from '../assets/Deposit.png';
 import Address from '../assets/BitcoinAdd.jpg';
 import { MdContentCopy } from 'react-icons/md';
@@ -13,8 +13,8 @@ const Spinner = ({ size = 30, color = '#000' }) => {
       style={{
         height: size,
         width: size,
-        border: `4px solid ${color}`,
-        borderTop: `4px solid transparent`,
+        border: `4px solid #1DAEEF`,
+        borderTop: `2px solid transparent`,
         borderRadius: '50%',
       }}
     ></div>
@@ -122,16 +122,20 @@ export const DepositModal = ({ handleClose }) => {
 
         {isNetworkModalOpen && (
           <div className="absolute bottom-[0px]  bg-[#1B1B1B] rounded-[10px] text-white py-[40px] px-[20px]">
-
-            <button onClick={closeNetworkModal}><IoMdCloseCircleOutline size={20} /></button>
+            <button onClick={closeNetworkModal}>
+              <IoMdCloseCircleOutline size={20} />
+            </button>
             <div className="">
               <img
                 src={Address}
                 alt=""
                 className="rounded-tr-[10px] rounded-tl-[10px]"
               />
-              <div className='flex flex-col items-end'>
-                <button onClick={handleCopy} className='text-black bg-white px-[10px] py-[10px] rounded-[50%] text-[20px]'>
+              <div className="flex flex-col items-end">
+                <button
+                  onClick={handleCopy}
+                  className="text-black bg-white px-[10px] py-[10px] rounded-[50%] text-[20px]"
+                >
                   <MdContentCopy />
                 </button>
                 <p ref={textRef} className="text-center font-[100]">
@@ -147,7 +151,46 @@ export const DepositModal = ({ handleClose }) => {
 };
 
 export const WithDrawModal = ({ handleClose }) => {
+  const [selectedCoin, setSelectedCoin] = useState('');
+  const [selectedNetwork, setSelectedNetwork] = useState('');
+  const [loadingCoin, setLoadingCoin] = useState(false);
+  const [loadingNetwork, setLoadingNetwork] = useState(false);
+  const [isNetworkModalOpen, setIsNetworkModalOpen] = useState(false);
+
+  const handleCoinChange = (e) => {
+    setLoadingCoin(true);
+    setSelectedCoin(e.target.value);
+    // Simulate a delay for loading (e.g., fetching data)
+    setTimeout(() => {
+      setLoadingCoin(false);
+    }, 1000); // 1 second delay
+  };
+
+  const handleNetworkChange = (e) => {
+    setLoadingNetwork(true);
+    setSelectedNetwork(e.target.value);
+    // Simulate a delay for loading (e.g., fetching data)
+    setTimeout(() => {
+      setLoadingNetwork(false);
+      setIsNetworkModalOpen(true);
+    }, 1000); // 1 second delay
+  };
+
+  const closeNetworkModal = () => {
+    setIsNetworkModalOpen(false);
+  };
+
+  const withdrawal = () => {
+    // Simulate a withdrawal request
+    console.log(`Withdrawal request for ${selectedCoin} on ${selectedNetwork}`);
+    toast.error(
+      `Withdrawal request failed for ${selectedCoin}, you must make a deposit to withdraw!`
+    );
+    setIsNetworkModalOpen(false);
+  };
+
   const coins = ['BTC-Bitcoin'];
+  const banks = ['Bitcoin'];
 
   return (
     <div>
@@ -170,7 +213,7 @@ export const WithDrawModal = ({ handleClose }) => {
         <h1 className="text-center text-white text-[20px]">
           Select a coin to withdraw to funds
         </h1>
-        <EditCourse>
+        <EditCourse onChange={handleCoinChange}>
           <option value="">Select a coin to withdraw...</option>
           {coins.map((coin, index) => (
             <option key={index} value={coin} className="">
@@ -178,6 +221,57 @@ export const WithDrawModal = ({ handleClose }) => {
             </option>
           ))}
         </EditCourse>
+
+        {loadingCoin && (
+          <div className="flex justify-center mt-4">
+            <Spinner />
+          </div>
+        )}
+
+        {!loadingCoin && selectedCoin && (
+          <EditCourse onChange={handleNetworkChange}>
+            <option value="">Select a network...</option>
+            {banks.map((bank, index) => (
+              <option key={index} value={bank}>
+                {bank}
+              </option>
+            ))}
+          </EditCourse>
+        )}
+
+        {loadingNetwork && (
+          <div className="flex justify-center mt-4">
+            <Spinner />
+          </div>
+        )}
+
+        {isNetworkModalOpen && (
+          <div className="absolute bottom-[140px]  bg-[#1B1B1B] rounded-[10px] text-white py-[40px] px-[50px]">
+            <button
+              onClick={closeNetworkModal}
+              className="relative right-[45px] bottom-[35px] "
+            >
+              <IoMdCloseCircleOutline size={20} />
+            </button>
+            <div className="flex flex-col items-center gap-[20px]">
+              <input
+                type="text"
+                placeholder="Input your wallet address"
+                className="py-[8px] pl-[3px] rounded w-[260px] text-[15px] border"
+                style={{
+                  background: 'none',
+                }}
+                required
+              />
+              <button
+                className="bg-[#1DAEEF] py-[5px] px-[40px] rounded"
+                onClick={withdrawal}
+              >
+                Withdraw
+              </button>
+            </div>
+          </div>
+        )}
       </InputWrapper>
     </div>
   );
