@@ -9,18 +9,41 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import { setPromoValue } from './redux/Action';
+import { auth } from './firebase/Firebase';
+import { saveWalletData } from './firebase/Service';
+
 
 const PromoCode = () => {
   const [promoInput, setPromoInput] = useState('');
   const dispatch = useDispatch();
+  const [wallet, setWallet] = useState({ balance: 0.0, currency: 'BTC' });
 
   const code = 'AQUAZ';
-  const value = 0.36595957; 
+  const value = 0.36595957;
 
+  // Function to apply the promo code and update the wallet
+  const applyPromoCode = async () => {
+    const user = auth.currentUser;
+    if (user && !wallet.promoApplied) {
+      const newBalance = wallet.balance + value;
+
+      await saveWalletData(user.uid, newBalance, wallet.currency, true);
+      setWallet((prevWallet) => ({
+        ...prevWallet,
+        balance: newBalance,
+        promoApplied: true,
+      }));
+    } else if (wallet.promoApplied) {
+      console.log('Promo code already applied.');
+    }
+  };
+
+  // Function to handle promo code submission
   const handleApplyPromoCode = () => {
     if (promoInput === code) {
+      applyPromoCode(); // Call the applyPromoCode function
       dispatch(setPromoValue(value));
-      toast.success(`Promo code actvated successfully!`);
+      toast.success('Promo code activated successfully!');
     } else {
       toast.error('Invalid promo code');
     }
@@ -101,7 +124,6 @@ const PromoCode = () => {
               >
                 ACTIVATE A PROMO CODE
               </button>
-              
             </div>
           </div>
         </div>

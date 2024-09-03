@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from './contexts/authContext';
+import { toSignOut } from './firebase/Auth';
 
 const UserDropdown = () => {
   const navigate = useNavigate();
