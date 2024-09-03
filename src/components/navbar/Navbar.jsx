@@ -201,17 +201,6 @@ const Navbar = () => {
                   >
                     Wallet
                   </Link>
-
-                  <button
-                    onClick={() => {
-                      toSignOut().then(() => {
-                        navigate('/signin');
-                      });
-                    }}
-                    className="bg-red-700 text-white px-[20px] py-[5px] rounded"
-                  >
-                    Sign Out
-                  </button>
                 </>
               ) : (
                 <>
