@@ -18,12 +18,12 @@ const UserProfile = () => {
       return userName ? userName[0] : '';
     }
     
-    let UpperName = ''; // Declare UpperName at the top
+    let UpperName = ''; 
     
     if (currentUser && currentUser.email) {
       const email = currentUser.email; 
-      const userName = getUserNameFromEmail(email); // Get userName from email
-      UpperName = userName.charAt(0).toUpperCase() + userName.slice(1); // Capitalize first letter
+      const userName = getUserNameFromEmail(email);
+      UpperName = userName.charAt(0).toUpperCase() + userName.slice(1); 
     }
       
 
@@ -46,7 +46,8 @@ const UserProfile = () => {
             <input
               type="text"
               className="-2xlw-full p-3 rounded-2xl bg-[#18191D] border border-[#353945] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={UpperName}
+            //   value={UpperName}
+            placeholder={UpperName}
             />
             <button className="mt-4 w-full bg-[#1FAEEE] hover:bg-blue-600 text-white font-semibold py-3 rounded-2xl transition duration-200">
               Save name
