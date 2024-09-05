@@ -11,14 +11,29 @@ import { useAuth } from "./contexts/authContext";
 
 const UserProfile = () => {
   const UserProfileMain = () => {
+    const { currentUser } = useAuth();
 
-    const {currentUser} = useAuth();
+    function getUserNameFromEmail(email) {
+      const userName = email.match(/^[a-zA-Z]+/);
+      return userName ? userName[0] : '';
+    }
+    
+    let UpperName = ''; // Declare UpperName at the top
+    
+    if (currentUser && currentUser.email) {
+      const email = currentUser.email; 
+      const userName = getUserNameFromEmail(email); // Get userName from email
+      UpperName = userName.charAt(0).toUpperCase() + userName.slice(1); // Capitalize first letter
+    }
+      
+
+
     return (
       <div className="">
         <div className=" rounded-lg">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white">{currentUser.email}</h2>
-            <p className="text-gray-400">{currentUser.email}</p>
+            <h2 className="text-2xl font-bold text-white">{UpperName}</h2>
+            <p className="text-gray-400">{currentUser?.email}</p>
             <span className="inline-block mt-2 px-3 py-1 text-xs font-semibold text-red-600 bg-red-200 rounded-full">
               Not verified
             </span>
@@ -31,7 +46,7 @@ const UserProfile = () => {
             <input
               type="text"
               className="-2xlw-full p-3 rounded-2xl bg-[#18191D] border border-[#353945] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={currentUser.email}
+              value={UpperName}
             />
             <button className="mt-4 w-full bg-[#1FAEEE] hover:bg-blue-600 text-white font-semibold py-3 rounded-2xl transition duration-200">
               Save name
